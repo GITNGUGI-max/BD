@@ -1,0 +1,86 @@
+h1,hr
+{
+	margin-left: 200px;
+	color: red;
+}
+
+p{
+	margin-left: 220px;
+	color: red;
+	font-size: 1.5em;
+}
+.glyph{
+	margin-left: 220px;
+	font-size: 1.5em;
+}
+.social{
+	margin-left: 220px;
+}
+/* Style all font awesome icons */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+.fa-reddit {
+  background: #ff5700;
+  color: white;
+}
+.fa-whatsapp {
+  background: #008000;
+  color: white;
+}
+.card{
+	box-shadow: rgba(255, 255, 255, 1) 0px 30px 90px;
+	margin-top:10px;
+}
+.card-header{
+	margin:1rem 5rem;
+}
+p{
+  background-color: cornsilk;
+  border-radius: 5px;
+  font-size: larger;
+  text-align: center;
+}

@@ -1,0 +1,82 @@
+
+<div class="container-fluid" style="margin-top:70px;">
+	<div class="row-center">
+		<div class="col-lg-6">
+			<div class="card bg-dark rounded ">
+				<div  class="card-header bg-light">
+					<h3 class="text-center text-danger">Send Us a Message</h3>
+				</div>
+				<div class="card-body">
+					<form #contactForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+						<div class="form-group">
+							<label>Sender</label>
+							<select class="form-control" #sender="ngModel" name="sender" [(ngModel)]="selectedSender.sender" [class.is-invalid]="sender.invalid && sender.touched" required>
+								<option>Select Sender</option>
+								<option>Donor</option>
+								<option>Recipient</option>
+							</select>
+							<small class="text-danger" [class.d-none]="sender.valid || sender.untouched">Date is required.</small>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Sender Name</label>
+							<input type="text" #senderName="ngModel" name="senderName" class="form-control" [(ngModel)]="selectedSender.senderName"
+							 [class.is-invalid]="senderName.invalid && senderName.touched" required>
+
+						<small class="text-danger" [class.d-none]="senderName.valid || senderName.untouched">Date is required.</small>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Sender Email</label>
+							<input type="text" #senderEmail="ngModel" name="senderEmail"  class="form-control" [class.is-invalid]="senderEmail.invalid && senderEmail.touched" [(ngModel)]="selectedSender.senderEmail" required>
+							<small class="text-danger" [class.d-none]="senderEmail.valid || senderEmail.untouched">Date is required.</small>
+						
+						</div>
+						<div class="form-group">
+							<label class="control-label">Contact</label>
+							<input type="number" #contact="ngModel" name="contact"  class="form-control" [class.is-invalid]="contact.invalid && contact.touched" [(ngModel)]="selectedSender.contact" required>
+							<small class="text-danger" [class.d-none]="contact.valid || contact.untouched">Date is required.</small>
+							
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label">Date Sent</label>
+							<input type="date" name="sentDate" #sentDate="ngModel" class="form-control" [class.is-invalid]="sentDate.invalid && sentDate.touched" [(ngModel)]="selectedSender.sentDate" required>
+							<small class="text-danger" [class.d-none]="sentDate.valid || sentDate.untouched">Date is required.</small>
+						
+						</div>
+						<div class="form-group">
+							<label class="control-label">Message</label><br>
+							<textarea type="text" class="text-dark" #message="ngModel" [class.is-invalid]="message.invalid && message.touched" cols="45" rows="5"  name="message" [(ngModel)]="selectedSender.message"></textarea> 
+							<small  [class.d-none]="message.valid || message.untouched">Message is required.</small>
+						</div>
+						<div class="form-group">
+							<button class="btn btn-secondary btn-warning" type="submit" (click)="onSubmit()">Send</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	
+		<div class="col-lg-6">
+			<h1 >Contact Details</h1>
+			<hr class="my-4">
+			<p class="text-info">Donators & Kenya Medical Trust, Foo Street, Westlands.</p>
+			<a href="#" class="glyph"><span class="glyphicon glyphicon-earphone text-info">:072000000</span></a><br>
+			<a href="#" class="glyph"><span class="glyphicon glyphicon-envelope text-info">:lifesaver2021@gmail.com</span></a><br>
+
+			<a href="#" class="glyph"><span class="glyphicon glyphicon-globe text-info">:WWW.savealife.org</span></a><br>
+			<div class="social">
+				<a href="#" class="fa fa-facebook"></a> <a href="#" class="fa fa-twitter"></a><a href="#" class="fa fa-linkedin"></a><a href="#" class="fa fa-whatsapp"></a>
+			<a href="#" class="fa fa-youtube"></a> <a href="#" class="fa fa-instagram"></a><a href="#" class="fa fa-reddit"></a>
+
+			<h2>Let's Connect</h2>
+			<img src="../../assets/images/d18.png" class="d-block w-100" alt="">
+			</div>
+			
+
+			
+
+		</div>
+	</div>
+
+

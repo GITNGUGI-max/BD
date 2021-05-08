@@ -1,0 +1,181 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-6">
+			<img src="../../assets/images/d23.png" class="d-block w-100" alt="">
+		<h1 class="text-lg text-danger" >Register as Patient</h1>
+		<p class="text-sm text-info" >Registering as a patient will help you connect with donors who can help donate blood for you.</p>
+		<img src="../../assets/images/d22.png" class="d-block w-100" alt="">
+		</div>
+	
+		<div class="col-lg-6">
+			<div class="card  bg-dark  rounded" >
+			<div  class="card-header bg-light">
+				<h3 class="text-center text-danger ">Register as Recipient</h3>
+				</div>
+				<div class="card-body">
+					<form #patientForm="ngForm" ngSubmit="onSubmit()" nonvalidate enctype="multipart/form-data">
+						
+						<div class="form-group ">
+							<label >Patient Name:</label>
+							<div>
+								<input type="text" class="form-control" name="patientName" [(ngModel)]="selectedPatient.patientName" #patientName="ngModel" 
+								[class.is-invalid]="patientName.invalid && patientName.touched" required>
+							</div>
+							<small class="text-danger" [class.d-none]="patientName.valid || patientName.untouched">The parent name must be provided.</small>
+						</div>
+						<div class="form-group ">
+							<label >Hospital Name:</label>
+							<div>
+								<input type="text" class="form-control" name="hospitalName"  [(ngModel)]="selectedPatient.hospitalName" #hospitalName="ngModel" [class.is-invalid]="hospitalName.invalid && hospitalName.touched" required>
+							</div>
+							<small class="text-danger" [class.d-none]="hospitalName.valid || hospitalName.untouched">The hospital name must be provided.</small>
+						</div>
+						<div class="form-group ">
+							<label >County:</label>
+							<div>
+								<select type="number" class="form-control" name="county"  [(ngModel)]="selectedPatient.county" #county="ngModel" [class.is-invalid]="county.invalid && county.touched" required>
+									<option>Select County</option>
+									<option *ngFor="let county of counties">{{county.countyName}}</option>
+								</select>
+							</div>
+							<small class="text-danger" [class.d-none]="county.valid || county.untouched">The county name must be provide.</small>
+						</div>
+						<div class="form-group ">
+							<label >Sub County:</label>
+							<div>
+								<select class="form-control" name="subCounty"  [(ngModel)]="selectedPatient.subCounty" #subCounty="ngModel" 
+								[class.is-Invalid]="subCounty.invalid && subCounty.touched" required>
+									<option>Select Sub-County</option>
+									<option *ngFor="let subcounty of subCounties">{{subcounty.subCountyName}}</option>
+								</select>
+							</div>
+							<small class="text-danger" [class.d-none]="subCounty.valid || subCounty.untouched">The su-county name must provide.</small>
+						</div>
+						
+						<div class="form-group ">
+							<label >Doctor:</label>
+							<div>
+								<input type="text" class="form-control" name="doctor"  [(ngModel)]="selectedPatient.doctor" #doctor="ngModel" 
+								[class.is-invalid]="doctor.invalid && doctor.touched" required>
+							</div>
+							<small class="text-danger" [class.d-none]="doctor.valid || doctor.untouched">The doctor's name must be provided.</small>
+						</div>    
+						<!-- <div class="form-group ">
+							<label >Blood Group:</label>
+							<div>
+								<select class="form-control" name="bloodGroup"  [(ngModel)]="selectedPatient.bloodGroup" #bloodGroup="ngModel" [class.is-invalid]="bloodGroup.invalid && bloodGroup.touched" required>
+									<option>Select Blood Group</option>
+								</select>
+							</div>
+							<small class="text-danger" [class.d-none]="bloodGroup.valid || bloodGroup.untouched"></small>
+						</div>   -->  
+						<div class="form-group ">
+							<label >Contact Name:</label>
+							<div>
+								<input type="text" class="form-control" name="contactName"  [(ngModel)]="selectedPatient.contactName" #contactName="ngModel" [class.is-invalid]="contactName.invalid && contactName.touched" required>
+							</div>
+							<small class="text-danger" [class.d-none]="contactName.valid || contactName.untouched">The contact name must be provided</small>
+						</div>  <div class="form-group ">
+							<label >Email:</label>
+							<div>
+								<input type="email" class="form-control" name="email"  [(ngModel)]="selectedPatient.email" #email="ngModel" 
+								[class.is-invalid]="email.invalid && email.touched" required>
+							</div>
+							<small class="text-danger" [class.d-none]="email.valid || email.untouched">The email is required.</small>
+						</div>  
+						
+						<div class="form-group ">
+							<label >Contact Date:</label>
+							<div>
+								<input type="date" class="form-control" name="contactDate"  [(ngModel)]="selectedPatient.contactDate" #contactDate="ngModel" [class.is-invalid]="contactDate.invalid && contactDate.touched" required>
+							</div>
+							<small class="text-danger" [class.d-none]="contactDate.valid || contactDate.untouched">The contact date is required.</small>
+						</div>  
+						<div class="form-group ">
+							<label >Required Date:</label>
+							<div>
+								<input type="date" class="form-control" name="requiredDate"  [(ngModel)]="selectedPatient.requiredDate" #requiredDate="ngModel" [class.is-invalid]="requiredDate.invalid && requiredDate.touched" required>
+							</div>
+							<small class="text-danger" [class.d-none]="requiredDate.valid || requiredDate.untouched">The required date must be provided.</small>
+						</div> 
+						<div class="form-group ">
+							<label >Blood Group:</label>
+							<div>
+								<select class="form-control" name="bloodGroup"  [(ngModel)]="selectedPatient.bloodGroup" #bloodGroup="ngModel"  
+								[class.is-invalid]="bloodGroup.invalid && bloodGroup.touched" required>
+									<option>Select Blood Group</option>
+									<option>A</option>
+									<option>B</option>
+									<option>AB</option>
+									<option>O</option>
+								</select>
+							</div>
+							<small class="text-danger" [class.d-none]="bloodGroup.valid || bloodGroup.untouched">The blood group must be provided.</small>
+						</div>  
+						<div class="form-group ">
+							<label >Blood Units:</label>
+							<div>
+								<input type="text" class="form-control" name="bloodUnits"  [(ngModel)]="selectedPatient.bloodUnits" #bloodUnits="ngModel" 
+								[class.is-invalid]="bloodUnits.invalid && bloodUnits.touched" required>
+							</div>
+							<small class="text-danger" [class.d-none]="bloodUnits.valid || bloodUnits.untouched">The blood units must be provided.</small>
+						</div>  
+						 
+						<div class="form-group ">
+							<label >Contact One:</label>
+							<div>
+								<input type="text" class="form-control" name="contactOne"  [(ngModel)]="selectedPatient.contactOne" #contactOne="ngModel" 
+								[class.is-invalid]="contactOne.invalid && contactOne.touched" required>
+							</div>
+							<small class="text-danger" [class.d-none]="contactOne.valid || contactOne.untouched">The contact must be provided.</small>
+						</div>  
+						<div class="form-group ">
+							<label >Contact Two:</label>
+							<div>
+								<input type="text" class="form-control" name="contactTwo"  [(ngModel)]="selectedPatient.contactTwo"  #contactTwo="ngModel" 
+								[class.is-invalid]="contactTwo.invalid && contactTwo.touched" required>
+							</div>
+							<small class="text-danger" [class.d-none]="contactTwo.valid || contactTwo.untouched">The contact must be provided.</small>
+						</div>  
+						<div class="form-group ">
+							<label >Reason:</label>
+							<div>
+								<input type="text" class="form-control" name="reason"  [(ngModel)]="selectedPatient.reason" #reason="ngModel" 
+								[class.is-invalid]="reason.invalid && reason.touched" required>
+							</div>
+							<small class="text-danger" [class.d-none]="reason.valid || reason.untouched">The contact must be provided.</small>
+						</div>  
+						<!-- <div class="form-group ">
+							<label >Status:</label>
+							<div>
+								<select class="form-control" name="county"  [(ngModel)]="selectedPatient.status" #status="ngModel" [class.is-invalid]="county.invalid && county.touched" required>
+									<option>Select Status</option>
+									<option>1</option>
+									<option value='0' selected>0</option>
+								</select>
+							</div>
+							<small class="text-danger" [class.d-none]="status.valid || status.untouched">The county name must be provide.</small>
+						</div> -->
+						<!-- <div class="form-group ">
+							<label >Picture:</label>
+							<div>
+								<input type="file" class="form-control" name="image"  [(ngModel)]="selectedPatient.image" #image="ngModel" [class.is-invalid]="image.invalid && image.touched" required >
+							</div>
+								<small class="text-danger" [class.d-none]="image.valid || image.untouched">The contact must be provided.</small>
+						</div>   -->
+						<div class="form-group ">
+
+							<div><button type="submit" class="btn btn-warning mt-3" (click)="onSubmit()">Register</button></div>
+							
+						</div>
+
+					</form>
+				
+			</div>
+		
+		</div>
+		</div>
+	</div>
+
+		
+		

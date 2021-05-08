@@ -1,0 +1,42 @@
+
+<div class="container-fluid" style="margin-top:70px;">
+  <div class="row center">
+    <div class="col-lg-8">
+<div class="card shadow-lg p-5 m-7 bg-success rounded" style="width: 50em; margin-top: 10px; margin-left: 300px;">
+    <div class="card-header text-center text-success" style="background-color:darkorange;" >Register as User</div>
+    <div class="card-body">
+  
+    
+        <div class="form-group">
+            <label for="">Username: </label>
+          <input class="form-control" type="text"  #username name="username">
+      </div>
+          
+   
+        <div class="form-group">
+          <label for="">Email: </label>
+          <input class="form-control" type="text" #email name="email" >
+      </div>
+        <div class="form-group">
+          <label for="">Password: </label>
+          <input class="form-control"  type="password" #password1 name="password1" >
+        </div>
+        <div class="form-group">
+          <label for="">Password: </label>
+          <input class="form-control"  type="password" #password2 name="password2" >
+        </div>
+        <div class="form-group text-center" style="margin-top: 10px;">
+          <button  (click)="signup(username.value, email.value, password1.value, password2.value)" class="btn btn-warning">Sign-Up</button>
+        </div>
+          <p>{{ error?.message }}</p>
+          <p *ngIf="error">{{ error?.error | json }}</p>
+  
+  </div>
+  
+  </div>
+   </div>
+  
+  </div>
+   </div>
+  
+  
